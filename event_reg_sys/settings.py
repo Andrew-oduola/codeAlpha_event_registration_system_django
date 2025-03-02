@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'customusers',
+    'events',
 
     'rest_framework',
     'djoser',

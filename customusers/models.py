@@ -22,7 +22,7 @@ class CustomUserManager(BaseUserManager):
 
         return self.create_user(email, password, **extra_fields)
     
-class CustomUser(AbstractBaseUser):
+class CustomUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(verbose_name="email", unique=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
