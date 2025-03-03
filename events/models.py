@@ -20,6 +20,9 @@ class Event(models.Model):
 class EventRegistration(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     user = models.ForeignKey('customusers.CustomUser', on_delete=models.CASCADE)
+    status = models.CharField(max_length=20, default='registered', choices=[('pending', 'Pending'),  
+                                                                          ('registered', 'Registered'),
+                                                                          ('cancelled', 'Cancelled')])
     registration_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
