@@ -1,7 +1,7 @@
 
 from rest_framework import viewsets
 from rest_framework.decorators import action
-from rest_framework.permissions import IsAdminUser
+from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 
 from django.http import HttpResponse
@@ -21,7 +21,7 @@ class EventViewSet(viewsets.ModelViewSet):
     serializer_class = EventSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = EventFilter
-
+    permission_classes = [IsAuthenticated]
 
 class EventRegistrationViewSet(viewsets.ModelViewSet):
     queryset = EventRegistration.objects.all()
