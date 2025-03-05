@@ -2,6 +2,10 @@ import django_filters
 from django_filters import CharFilter, DateFilter, NumberFilter
 
 from .models import Event, EventRegistration
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
 
 class EventFilter(django_filters.FilterSet):
     title = CharFilter(field_name='title', lookup_expr='icontains')
