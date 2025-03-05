@@ -1,8 +1,8 @@
-
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
+from rest_framework.pagination import PageNumberPagination
 
 from django.http import HttpResponse
 from django_filters.rest_framework import DjangoFilterBackend
@@ -11,23 +11,33 @@ import pandas as pd
 import csv
 
 from .models import Event, EventRegistration
-from .serializers import EventSerializer, EventRegistrationSerializer, \
-    AdminEventRegistrationSerializer
+from .serializers import EventSerializer, EventRegistrationSerializer, AdminEventRegistrationSerializer
 from .filters import EventFilter, EventRegistrationFilter
 
-# Create your views here.
+class StandardResultsSetPagination(PageNumberPagination):
+    page_size = 10
+    page_size_query_param = 'page_size'
+    max_page_size = 100
+
 class EventViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-    filter_backends = [DjangoFilterBackend]
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_class = EventFilter
     permission_classes = [IsAuthenticated]
+    pagination_class = StandardResultsSetPagination
+    search_fields = ['title', 'description', 'location']
+    ordering_fields = ['date', 'price', 'capacity']
 
 class EventRegistrationViewSet(viewsets.ModelViewSet):
     queryset = EventRegistration.objects.all()
     serializer_class = EventRegistrationSerializer
-    filter_backends = [DjangoFilterBackend]
-    filterset_class = EventRegistrationFilter   
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
+    filterset_class = EventRegistrationFilter
+    permission_classes = [IsAuthenticated]
+    pagination_class = StandardResultsSetPagination
+    search_fields = ['event__title', 'user__email']
+    ordering_fields = ['registration_date', 'status']
 
     def get_queryset(self):
         if self.request.user.is_staff:
@@ -86,6 +96,6 @@ class EventRegistrationViewSet(viewsets.ModelViewSet):
     def perform_destroy(self, instance):
         instance.unregister()
 
-    
+
 
 
