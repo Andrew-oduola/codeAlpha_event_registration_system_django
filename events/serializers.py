@@ -23,18 +23,19 @@ class EventSerializer(ModelSerializer):
         return value
 
 class AdminEventRegistrationSerializer(ModelSerializer):
-    get_total_revenue = SerializerMethodField()
-    get_total_attendees = SerializerMethodField()
+    total_revenue = SerializerMethodField()
+    total_attendees = SerializerMethodField()
 
     class Meta:
         model = EventRegistration
-        fields = ['id', 'event', 'user', 'registration_date', 'is_full', 'is_registered', 'get_total_revenue', 'get_total_attendees']
+        fields = ['id', 'event', 'user', 'registration_date', 
+                  'is_full', 'is_registered', 'total_revenue', 'total_attendees']
 
     def get_total_revenue(self, obj):
-        return obj.get_total_revenue()
+        return obj.event.get_total_revenue()
 
     def get_total_attendees(self, obj):
-        return obj.get_total_attendees()
+        return obj.event.get_total_attendees()
 
 class EventRegistrationSerializer(ModelSerializer):
     class Meta:
