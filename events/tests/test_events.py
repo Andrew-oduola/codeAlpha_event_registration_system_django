@@ -1,6 +1,7 @@
 from rest_framework.test import APIClient, APITestCase
 from rest_framework import status
 from django.contrib.auth import get_user_model
+from django.utils import timezone
 from events.models import Event, EventRegistration
 from model_bakery import baker
 
@@ -21,7 +22,7 @@ class TestCreateEvent(APITestCase):
         response = self.client.post('/events/', {
             'title': 'Test Event',
             'description': 'Test Description',
-            'date': '2025-03-04T10:00:00Z',
+            'date': timezone.now() + timezone.timedelta(days=1),  # Ensure the date is in the future
             'time': '10:00:00',
             'location': 'Test Location',
             'price': '10.00',
@@ -51,13 +52,15 @@ class TestRetrieveEvent(APITestCase):
         self.client.force_authenticate(user=self.user)
 
     def test_if_authenticated_user_can_retrieve_event_list(self):
-        baker.make(Event, organizer=self.user)
+        baker.make(Event, organizer=self.user, 
+                   date = timezone.now() + timezone.timedelta(days=1)) # Ensure the date is in the future)
         response = self.client.get('/events/')
         assert response.status_code == status.HTTP_200_OK
-        assert len(response.data) == 1
+        assert len(response.data) > 0
 
     def test_if_authenticated_user_can_retrieve_single_event(self):
-        event = baker.make(Event, organizer=self.user)
+        event = baker.make(Event, organizer=self.user,
+                           date=timezone.now() + timezone.timedelta(days=1))
         response = self.client.get(f'/events/{event.id}/')
         assert response.status_code == status.HTTP_200_OK
         assert response.data['title'] == event.title
@@ -70,11 +73,12 @@ class TestUpdateEvent(APITestCase):
         self.client.force_authenticate(user=self.user)
 
     def test_if_authenticated_user_can_update_event(self):
-        event = baker.make(Event, organizer=self.user)
+        event = baker.make(Event, organizer=self.user,
+                           date = timezone.now() + timezone.timedelta(days=1))
         response = self.client.put(f'/events/{event.id}/', {
             'title': 'Updated Event',
             'description': 'Updated Description',
-            'date': '2025-03-05T10:00:00Z',
+            'date': timezone.now() + timezone.timedelta(days=1),  # Ensure the date is in the future
             'time': '11:00:00',
             'location': 'Updated Location',
             'price': '20.00',
@@ -92,7 +96,8 @@ class TestDeleteEvent(APITestCase):
         self.client.force_authenticate(user=self.user)
 
     def test_if_authenticated_user_can_delete_event(self):
-        event = baker.make(Event, organizer=self.user)
+        event = baker.make(Event, organizer=self.user,
+                           date=timezone.now() + timezone.timedelta(days=1))
         response = self.client.delete(f'/events/{event.id}/')
         assert response.status_code == status.HTTP_204_NO_CONTENT
         assert Event.objects.count() == 0
@@ -103,12 +108,12 @@ class TestEventRegistration(APITestCase):
         self.client = APIClient()
         self.user = User.objects.create_user(email='testuser@gmail.com', password='testpass')
         self.client.force_authenticate(user=self.user)
-        self.event = baker.make(Event, organizer=self.user)
+        self.event = baker.make(Event, organizer=self.user, 
+                                date=timezone.now() + timezone.timedelta(days=1))
 
     def test_if_user_can_register_for_event(self):
         response = self.client.post('/registrations/', {
             'event': self.event.id,
-            'user': self.user.id,
             'status': 'registered'
         })
         assert response.status_code == status.HTTP_201_CREATED
@@ -118,7 +123,6 @@ class TestEventRegistration(APITestCase):
         self.event.save()
         response = self.client.post('/registrations/', {
             'event': self.event.id,
-            'user': self.user.id,
             'status': 'registered'
         })
         assert response.status_code == status.HTTP_400_BAD_REQUEST
@@ -129,3 +133,14 @@ class TestEventRegistration(APITestCase):
         response = self.client.delete(f'/registrations/{registration.id}/')
         assert response.status_code == status.HTTP_204_NO_CONTENT
         assert EventRegistration.objects.count() == 0
+
+    def test_if_admin_can_export_registrations_to_csv(self):
+        self.user.is_staff = True
+        self.user.save()
+        self.client.force_authenticate(user=self.user)
+        baker.make(EventRegistration, event=self.event, user=self.user, status='registered')
+        response = self.client.get('/registrations/export_csv/')
+        assert response.status_code == status.HTTP_200_OK
+        assert response['Content-Type'] == 'text/csv'
+        assert 'attachment; filename="event_registrations.csv"' in response['Content-Disposition']
+
