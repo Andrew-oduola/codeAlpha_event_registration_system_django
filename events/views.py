@@ -30,7 +30,7 @@ class EventViewSet(viewsets.ModelViewSet):
     ordering_fields = ['date', 'price', 'capacity']
 
 class EventRegistrationViewSet(viewsets.ModelViewSet):
-    queryset = EventRegistration.objects.all()
+    queryset = EventRegistration.objects.all().select_related('event', 'user') # Use select_related to reduce the number of queries
     serializer_class = EventRegistrationSerializer
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_class = EventRegistrationFilter
@@ -41,8 +41,8 @@ class EventRegistrationViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         if self.request.user.is_staff:
-            return EventRegistration.objects.all()
-        return EventRegistration.objects.filter(user=self.request.user)
+            return EventRegistration.objects.all().select_related('event', 'user')
+        return EventRegistration.objects.filter(user=self.request.user).select_related('event', 'user')
 
     def get_serializer_class(self):
         if self.request.user.is_staff:
@@ -53,7 +53,7 @@ class EventRegistrationViewSet(viewsets.ModelViewSet):
     @action(detail=False, methods=['get'], permission_classes=[IsAdminUser])
     def export_csv(self, request):
         # Get all event registrations
-        registrations = EventRegistration.objects.all()
+        registrations = EventRegistration.objects.all().select_related('event', 'user')
 
         # Calculate additional information
         total_registrations = registrations.count()
@@ -61,14 +61,7 @@ class EventRegistrationViewSet(viewsets.ModelViewSet):
         total_revenue = sum(reg.event.price for reg in registrations if reg.status == 'registered')
 
         # Create a DataFrame
-        data = []
-        for reg in registrations:
-            data.append({
-                'Event': reg.event.title,
-                'User': reg.user.email,
-                'Status': reg.status,
-                'Registration Date': reg.registration_date,
-            })
+        data = registrations.values('event__title', 'user__email', 'status', 'registration_date') # QuerySet to list of dictionaries
         df = pd.DataFrame(data)
 
         # Add additional information to the DataFrame
