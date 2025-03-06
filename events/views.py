@@ -37,7 +37,7 @@ class EventViewSet(viewsets.ModelViewSet):
     ordering_fields = ['date', 'price', 'capacity']
     throttle_classes = [UserRateThrottle, AnonRateThrottle]
 
-    @method_decorator(cache_page(60 * 5))
+    @method_decorator(cache_page(60 * 1))
     def list(self, request, *args, **kwargs):
         logger.info("Listing events")
         try:
@@ -87,7 +87,7 @@ class EventRegistrationViewSet(viewsets.ModelViewSet):
     ordering_fields = ['registration_date', 'status']
     throttle_classes = [UserRateThrottle, AnonRateThrottle]
 
-    @method_decorator(cache_page(60 * 5))
+    @method_decorator(cache_page(60 * 1))
     def get_queryset(self):
         try:
             if self.request.user.is_staff:

@@ -205,3 +205,1298 @@ TypeError: EventRegistrationViewSet.get_queryset() missing 1 required positional
 2025-03-06 05:26:59,282 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
 2025-03-06 05:27:12,512 (INFO) - django.utils.autoreload - C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py changed, reloading.
 2025-03-06 05:27:19,263 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 05:27:27,622 (INFO) - events.views - Creating an event
+2025-03-06 05:27:29,316 (INFO) - events.views - Creating an event
+2025-03-06 05:27:29,320 (ERROR) - events.views - Validation error creating event: {'title': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')], 'time': [ErrorDetail(string='Time has wrong format. Use one of these formats instead: hh:mm[:ss[.uuuuuu]].', code='invalid')], 'price': [ErrorDetail(string='A valid number is required.', code='invalid')], 'capacity': [ErrorDetail(string='Ensure this value is greater than or equal to 0.', code='min_value')]}
+2025-03-06 05:27:29,321 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:27:31,227 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:27:33,052 (INFO) - events.views - Listing events
+2025-03-06 05:27:35,936 (INFO) - events.views - Updating event with ID 1
+2025-03-06 05:27:37,447 (INFO) - events.views - Deleting event with ID 1
+2025-03-06 05:27:41,067 (INFO) - events.views - Registering user testuser@gmail.com for event ugizskKeurlyVUjPfrcdmrOwPLwOMHlWUBYpzWGLMVXWamvMawPMTRCeqAargojjhAxYpHNzuvWcQeULIHxdxWOoNCBwYVytXXMh
+2025-03-06 05:27:41,068 (ERROR) - events.views - Validation error registering user testuser@gmail.com for event: [ErrorDetail(string='Cannot register for this event. Event is full.', code='invalid')]
+2025-03-06 05:27:41,069 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 05:27:44,700 (INFO) - events.views - Registering user testuser@gmail.com for event lLKWKDoQIxXVClqmqCgpROZJFfFBQEYlFAWcFADuOZBQztsKmlPSLZKgIRnlfGNEMOJxHcXlGESyHzuYTPSSvnJzmMdWaOOqVOUz
+2025-03-06 05:27:44,779 (ERROR) - events.views - Error registering user testuser@gmail.com for event: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 05:27:44,812 (ERROR) - django.request - Internal Server Error: /registrations/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py", line 141, in perform_create
+    serializer.save(user=self.request.user)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\serializers.py", line 50, in create
+    return super().create(validated_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 1008, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 05:27:54,295 (INFO) - events.views - Creating an event
+2025-03-06 05:27:55,801 (INFO) - events.views - Creating an event
+2025-03-06 05:27:55,809 (ERROR) - events.views - Validation error creating event: {'title': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')], 'time': [ErrorDetail(string='Time has wrong format. Use one of these formats instead: hh:mm[:ss[.uuuuuu]].', code='invalid')], 'price': [ErrorDetail(string='A valid number is required.', code='invalid')], 'capacity': [ErrorDetail(string='Ensure this value is greater than or equal to 0.', code='min_value')]}
+2025-03-06 05:27:55,810 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:27:57,174 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:27:58,780 (INFO) - events.views - Listing events
+2025-03-06 05:28:01,573 (INFO) - events.views - Updating event with ID 1
+2025-03-06 05:28:03,122 (INFO) - events.views - Deleting event with ID 1
+2025-03-06 05:28:08,619 (INFO) - events.views - Registering user testuser@gmail.com for event LzQpmjwjTnsDNjaWASIwTtKUlHHuVsFFXljrzXRxcNDdwXLdGfMdJAaOWdlnwbvksZIGouXOuJROhFJidPWLbTcNciYEozeSbdDi
+2025-03-06 05:28:08,620 (ERROR) - events.views - Validation error registering user testuser@gmail.com for event: [ErrorDetail(string='Cannot register for this event. Event is full.', code='invalid')]
+2025-03-06 05:28:08,621 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 05:28:11,565 (INFO) - events.views - Registering user testuser@gmail.com for event uYtoJYTGeiwWjCgdZRrnNxiajOhfmXbqWUKmYaTyGgmAxTPeCATklaWWmvLwGimjdRNqddhyVluhyaTOIAADinTtLOEcycJTtXeh
+2025-03-06 05:28:11,569 (ERROR) - events.views - Error registering user testuser@gmail.com for event: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 05:28:11,614 (ERROR) - django.request - Internal Server Error: /registrations/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py", line 141, in perform_create
+    serializer.save(user=self.request.user)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\serializers.py", line 50, in create
+    return super().create(validated_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 1008, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 05:29:19,530 (INFO) - events.views - Creating an event
+2025-03-06 05:29:22,074 (INFO) - events.views - Creating an event
+2025-03-06 05:29:22,080 (ERROR) - events.views - Validation error creating event: {'title': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')], 'time': [ErrorDetail(string='Time has wrong format. Use one of these formats instead: hh:mm[:ss[.uuuuuu]].', code='invalid')], 'price': [ErrorDetail(string='A valid number is required.', code='invalid')], 'capacity': [ErrorDetail(string='Ensure this value is greater than or equal to 0.', code='min_value')]}
+2025-03-06 05:29:22,082 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:29:25,667 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:29:28,060 (INFO) - events.views - Listing events
+2025-03-06 05:29:33,730 (INFO) - events.views - Updating event with ID 1
+2025-03-06 05:29:36,902 (INFO) - events.views - Deleting event with ID 1
+2025-03-06 05:29:44,564 (INFO) - events.views - Registering user testuser@gmail.com for event nQIuwqJlpwbvNCZtgIbgXcOrhwdoChZpbvLABNZqQUlnwrqVySJRqnbMTzjKKCecqfKUgCtxeCWBEPYAelyEZeAyriFLZXHjZJNH
+2025-03-06 05:29:44,565 (ERROR) - events.views - Validation error registering user testuser@gmail.com for event: [ErrorDetail(string='Cannot register for this event. Event is full.', code='invalid')]
+2025-03-06 05:29:44,566 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 05:29:48,194 (INFO) - events.views - Registering user testuser@gmail.com for event DzKXkbXzyKrePfjYBzLbzKiCRNPPLhJcYyZtASynuGCjjjBSmSsXOBNcbgrFyLTLUecdEgpGMgIvubFygmEtNzaKmeIGfnfFUNuL
+2025-03-06 05:29:48,199 (ERROR) - events.views - Error registering user testuser@gmail.com for event: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 05:29:48,233 (ERROR) - django.request - Internal Server Error: /registrations/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py", line 141, in perform_create
+    serializer.save(user=self.request.user)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\serializers.py", line 50, in create
+    return super().create(validated_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 1008, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 05:44:26,449 (INFO) - events.views - Creating an event
+2025-03-06 05:44:28,498 (INFO) - events.views - Creating an event
+2025-03-06 05:44:28,503 (ERROR) - events.views - Validation error creating event: {'title': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')], 'time': [ErrorDetail(string='Time has wrong format. Use one of these formats instead: hh:mm[:ss[.uuuuuu]].', code='invalid')], 'price': [ErrorDetail(string='A valid number is required.', code='invalid')], 'capacity': [ErrorDetail(string='Ensure this value is greater than or equal to 0.', code='min_value')]}
+2025-03-06 05:44:28,504 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:44:30,755 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:44:32,497 (INFO) - events.views - Listing events
+2025-03-06 05:44:36,033 (INFO) - events.views - Updating event with ID 1
+2025-03-06 05:44:37,723 (INFO) - events.views - Deleting event with ID 1
+2025-03-06 05:44:42,824 (INFO) - events.views - Registering user testuser@gmail.com for event vxTkiYSZtqCUMNUCzufwFXRgeGKyzUMenzDIVWogvERHvCcnqqOVJijmGtJKClOWYcqHmQFhzsagMQBBTdpMWlCBUMYeIwoPhpEw
+2025-03-06 05:44:42,826 (ERROR) - events.views - Validation error registering user testuser@gmail.com for event: [ErrorDetail(string='Cannot register for this event. Event is full.', code='invalid')]
+2025-03-06 05:44:42,827 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 05:44:46,648 (INFO) - events.views - Registering user testuser@gmail.com for event mxfTWDhHOTsqyjhvQgrdrmEMgbUSaFXKFmJhCdmDjyxrlDCfSvETjQnRDuvUUYVygTKyzTKWpbLbdyVtepVOlWFDqzuZwGHjgmXH
+2025-03-06 05:44:46,715 (ERROR) - events.views - Error registering user testuser@gmail.com for event: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 05:44:46,990 (ERROR) - django.request - Internal Server Error: /registrations/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py", line 141, in perform_create
+    serializer.save(user=self.request.user)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\serializers.py", line 50, in create
+    return super().create(validated_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 1008, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 05:44:57,688 (INFO) - events.views - Creating an event
+2025-03-06 05:44:59,833 (INFO) - events.views - Creating an event
+2025-03-06 05:44:59,842 (ERROR) - events.views - Validation error creating event: {'title': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')], 'time': [ErrorDetail(string='Time has wrong format. Use one of these formats instead: hh:mm[:ss[.uuuuuu]].', code='invalid')], 'price': [ErrorDetail(string='A valid number is required.', code='invalid')], 'capacity': [ErrorDetail(string='Ensure this value is greater than or equal to 0.', code='min_value')]}
+2025-03-06 05:44:59,843 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:45:02,938 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:45:05,315 (INFO) - events.views - Listing events
+2025-03-06 05:45:08,962 (INFO) - events.views - Updating event with ID 1
+2025-03-06 05:45:10,858 (INFO) - events.views - Deleting event with ID 1
+2025-03-06 05:45:15,108 (INFO) - events.views - Registering user testuser@gmail.com for event aOWBnLHlEeQbrIupVpIzgwPGTrWUFdnHkTAjVnMCiYRnqSnVebIaEfbysJgnlzqSoBlByYkgeWrkjsyMpjmrkZkPcAAOWEnHORox
+2025-03-06 05:45:15,110 (ERROR) - events.views - Validation error registering user testuser@gmail.com for event: [ErrorDetail(string='Cannot register for this event. Event is full.', code='invalid')]
+2025-03-06 05:45:15,110 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 05:45:18,365 (INFO) - events.views - Registering user testuser@gmail.com for event PYweCVLgLSrMgrNEjDbTHpTXFSasLKXIORPYjuJLSNIBeeagOjXCGFmvmSeWHMvacqyJSLrkmzuWsZiuVuvlNQAztpHpSwwXeKsX
+2025-03-06 05:45:18,371 (ERROR) - events.views - Error registering user testuser@gmail.com for event: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 05:45:18,405 (ERROR) - django.request - Internal Server Error: /registrations/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py", line 141, in perform_create
+    serializer.save(user=self.request.user)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\serializers.py", line 50, in create
+    return super().create(validated_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 1008, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 05:48:50,105 (INFO) - django.utils.autoreload - C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\event_reg_sys\settings.py changed, reloading.
+2025-03-06 05:48:55,478 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 05:49:05,789 (INFO) - django.utils.autoreload - C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\event_reg_sys\settings.py changed, reloading.
+2025-03-06 05:49:10,074 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 05:49:23,436 (INFO) - django.utils.autoreload - C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\event_reg_sys\settings.py changed, reloading.
+2025-03-06 05:49:26,632 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 05:49:47,449 (INFO) - events.views - Creating an event
+2025-03-06 05:49:48,674 (INFO) - django.utils.autoreload - C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\event_reg_sys\settings.py changed, reloading.
+2025-03-06 05:49:51,564 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 05:50:12,822 (INFO) - events.views - Creating an event
+2025-03-06 05:50:15,241 (INFO) - events.views - Creating an event
+2025-03-06 05:50:15,249 (ERROR) - events.views - Validation error creating event: {'title': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')], 'time': [ErrorDetail(string='Time has wrong format. Use one of these formats instead: hh:mm[:ss[.uuuuuu]].', code='invalid')], 'price': [ErrorDetail(string='A valid number is required.', code='invalid')], 'capacity': [ErrorDetail(string='Ensure this value is greater than or equal to 0.', code='min_value')]}
+2025-03-06 05:50:15,251 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:50:17,806 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:50:20,330 (INFO) - events.views - Listing events
+2025-03-06 05:50:26,036 (INFO) - events.views - Updating event with ID 4
+2025-03-06 05:50:28,782 (INFO) - events.views - Deleting event with ID 5
+2025-03-06 05:50:50,292 (INFO) - events.views - Creating an event
+2025-03-06 05:50:53,043 (INFO) - events.views - Creating an event
+2025-03-06 05:50:53,050 (ERROR) - events.views - Validation error creating event: {'title': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')], 'time': [ErrorDetail(string='Time has wrong format. Use one of these formats instead: hh:mm[:ss[.uuuuuu]].', code='invalid')], 'price': [ErrorDetail(string='A valid number is required.', code='invalid')], 'capacity': [ErrorDetail(string='Ensure this value is greater than or equal to 0.', code='min_value')]}
+2025-03-06 05:50:53,051 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:50:55,445 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:50:57,263 (INFO) - events.views - Listing events
+2025-03-06 05:51:01,142 (INFO) - events.views - Updating event with ID 4
+2025-03-06 05:51:03,627 (INFO) - events.views - Deleting event with ID 5
+2025-03-06 05:51:08,698 (INFO) - events.views - Registering user testuser@gmail.com for event frWAqlvKfCFdRCGxNvzccmXptzgVmnaIBEzxsbeROqHkyyRQZJXuHVZdhFXsVnBxQWSUWcvrBbDFIHEgiTGgfPmatdxfldQCMnwr
+2025-03-06 05:51:08,700 (ERROR) - events.views - Validation error registering user testuser@gmail.com for event: [ErrorDetail(string='Cannot register for this event. Event is full.', code='invalid')]
+2025-03-06 05:51:08,700 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 05:51:12,440 (INFO) - events.views - Registering user testuser@gmail.com for event KeRggOHLphnidLAurrNMkyrSeIaYMAmBJfbfkYNIVYCTfAXhdsaeAEdjyWrciGbdcNBlhwrfHKJqNAsAiXXjZWOIEFPxZiUcExSD
+2025-03-06 05:51:12,446 (ERROR) - events.views - Error registering user testuser@gmail.com for event: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 05:51:12,481 (ERROR) - django.request - Internal Server Error: /registrations/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py", line 141, in perform_create
+    serializer.save(user=self.request.user)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\serializers.py", line 50, in create
+    return super().create(validated_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 1008, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 05:53:15,868 (INFO) - django.utils.autoreload - C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\event_reg_sys\settings.py changed, reloading.
+2025-03-06 05:53:27,617 (INFO) - events.views - Creating an event
+2025-03-06 05:53:29,136 (INFO) - events.views - Creating an event
+2025-03-06 05:53:29,143 (ERROR) - events.views - Validation error creating event: {'title': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')], 'time': [ErrorDetail(string='Time has wrong format. Use one of these formats instead: hh:mm[:ss[.uuuuuu]].', code='invalid')], 'price': [ErrorDetail(string='A valid number is required.', code='invalid')], 'capacity': [ErrorDetail(string='Ensure this value is greater than or equal to 0.', code='min_value')]}
+2025-03-06 05:53:29,144 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:53:30,774 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:53:32,328 (INFO) - events.views - Listing events
+2025-03-06 05:53:36,083 (INFO) - events.views - Updating event with ID 4
+2025-03-06 05:53:37,597 (INFO) - events.views - Deleting event with ID 5
+2025-03-06 05:53:41,364 (INFO) - events.views - Registering user testuser@gmail.com for event UvAAJJXLPIVEnoSkjjfQFRWFQSEUeqAxIcoqwgIYboWtEJluKOGCGGtqgwsleOJTKAgWgFuSIawtHSjKkOnKWOJaEsQHbVglFYRO
+2025-03-06 05:53:41,366 (ERROR) - events.views - Validation error registering user testuser@gmail.com for event: [ErrorDetail(string='Cannot register for this event. Event is full.', code='invalid')]
+2025-03-06 05:53:41,367 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 05:53:44,185 (INFO) - events.views - Registering user testuser@gmail.com for event dcSLrpFdeejjxcYygvkfkPIgOSoCzbHShyxCbWIWXozspTDfirirYnokIURSANxjmqQFuBuYeBWOZWNlHiZFpXiTdgrIyqWDAVRb
+2025-03-06 05:53:44,195 (ERROR) - events.views - Error registering user testuser@gmail.com for event: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 05:53:44,249 (ERROR) - django.request - Internal Server Error: /registrations/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py", line 141, in perform_create
+    serializer.save(user=self.request.user)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\serializers.py", line 50, in create
+    return super().create(validated_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 1008, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 05:56:39,290 (INFO) - events.views - Creating an event
+2025-03-06 05:56:40,917 (INFO) - events.views - Creating an event
+2025-03-06 05:56:40,925 (ERROR) - events.views - Validation error creating event: {'title': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')], 'time': [ErrorDetail(string='Time has wrong format. Use one of these formats instead: hh:mm[:ss[.uuuuuu]].', code='invalid')], 'price': [ErrorDetail(string='A valid number is required.', code='invalid')], 'capacity': [ErrorDetail(string='Ensure this value is greater than or equal to 0.', code='min_value')]}
+2025-03-06 05:56:40,926 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:56:43,102 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:56:45,295 (INFO) - events.views - Listing events
+2025-03-06 05:56:49,335 (INFO) - events.views - Updating event with ID 4
+2025-03-06 05:56:50,907 (INFO) - events.views - Deleting event with ID 5
+2025-03-06 05:56:55,039 (INFO) - events.views - Registering user testuser@gmail.com for event jKZtvnnWqRiWbHjOqzrJeOrIAxkYUxJQbDrJJtqGlUCcMNcEggHAgqQFJKBhYGehUtvBUbJvaShTpTCfOLEOMITbxtBEZhKgSyrp
+2025-03-06 05:56:55,042 (ERROR) - events.views - Validation error registering user testuser@gmail.com for event: [ErrorDetail(string='Cannot register for this event. Event is full.', code='invalid')]
+2025-03-06 05:56:55,042 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 05:56:59,338 (INFO) - events.views - Registering user testuser@gmail.com for event dyrekeUXDiReiarPKvORaHpAKfixQOeoSHmrTpXHKnmOeWYwczwiekZRqxYeFfqYyINBOKiiBznxvzefmACzVLXmsfHgoJTcGFlW
+2025-03-06 05:56:59,347 (ERROR) - events.views - Error registering user testuser@gmail.com for event: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 05:56:59,395 (ERROR) - django.request - Internal Server Error: /registrations/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py", line 141, in perform_create
+    serializer.save(user=self.request.user)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\serializers.py", line 50, in create
+    return super().create(validated_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 1008, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 05:58:06,627 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 05:59:23,051 (INFO) - events.views - Listing events
+2025-03-06 05:59:23,111 (ERROR) - events.views - Error listing events: Invalid page.
+2025-03-06 05:59:24,351 (WARNING) - django.request - Not Found: /events/
+2025-03-06 05:59:33,232 (INFO) - events.views - Creating an event
+2025-03-06 05:59:34,752 (INFO) - events.views - Creating an event
+2025-03-06 05:59:34,758 (ERROR) - events.views - Validation error creating event: {'title': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')], 'time': [ErrorDetail(string='Time has wrong format. Use one of these formats instead: hh:mm[:ss[.uuuuuu]].', code='invalid')], 'price': [ErrorDetail(string='A valid number is required.', code='invalid')], 'capacity': [ErrorDetail(string='Ensure this value is greater than or equal to 0.', code='min_value')]}
+2025-03-06 05:59:34,758 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:59:36,247 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:59:37,742 (INFO) - events.views - Listing events
+2025-03-06 05:59:38,586 (INFO) - events.views - Listing events
+2025-03-06 05:59:41,852 (INFO) - events.views - Updating event with ID 4
+2025-03-06 05:59:43,389 (INFO) - events.views - Deleting event with ID 5
+2025-03-06 05:59:47,959 (INFO) - events.views - Registering user testuser@gmail.com for event tyiuBvKxaUgroDHnHRfXinsBObBMtenYVpkyXCJslAhXzwYniFXMoeOtLVCDgBHggpCCrJszRiAyVtyrYHhNOERvTuoDrrTisMqz
+2025-03-06 05:59:47,961 (ERROR) - events.views - Validation error registering user testuser@gmail.com for event: [ErrorDetail(string='Cannot register for this event. Event is full.', code='invalid')]
+2025-03-06 05:59:47,962 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 05:59:51,799 (INFO) - events.views - Registering user testuser@gmail.com for event EJELPlKWaxucMdMNiGXjyBFEAutvXgewRPiTkLMiJnEmPNIqstBnQsEeMJJfDUDPOyFXNdLsnuzGDBdxGNcdYFsrkzYliKkbgXPv
+2025-03-06 05:59:51,806 (ERROR) - events.views - Error registering user testuser@gmail.com for event: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 05:59:51,844 (ERROR) - django.request - Internal Server Error: /registrations/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py", line 141, in perform_create
+    serializer.save(user=self.request.user)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\serializers.py", line 50, in create
+    return super().create(validated_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 1008, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 06:01:20,025 (INFO) - events.views - Creating an event
+2025-03-06 06:01:22,845 (INFO) - events.views - Creating an event
+2025-03-06 06:01:22,857 (ERROR) - events.views - Validation error creating event: {'title': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')], 'time': [ErrorDetail(string='Time has wrong format. Use one of these formats instead: hh:mm[:ss[.uuuuuu]].', code='invalid')], 'price': [ErrorDetail(string='A valid number is required.', code='invalid')], 'capacity': [ErrorDetail(string='Ensure this value is greater than or equal to 0.', code='min_value')]}
+2025-03-06 06:01:22,858 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 06:01:25,636 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 06:01:29,234 (INFO) - events.views - Listing events
+2025-03-06 06:01:35,899 (INFO) - events.views - Updating event with ID 4
+2025-03-06 06:01:38,762 (INFO) - events.views - Deleting event with ID 5
+2025-03-06 06:01:44,798 (INFO) - events.views - Registering user testuser@gmail.com for event pPeJycpsEjIoshniMReazTDwIHwFZaWWJgDPVdwzlzWVbHIzYkpZMUnqdrAFyJLdAkzugPDbOnQNkirzKvtUnZeyMULEwwVkJHLk
+2025-03-06 06:01:44,800 (ERROR) - events.views - Validation error registering user testuser@gmail.com for event: [ErrorDetail(string='Cannot register for this event. Event is full.', code='invalid')]
+2025-03-06 06:01:44,801 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 06:01:49,577 (INFO) - events.views - Registering user testuser@gmail.com for event FWSfCPOjvKQaXSVUVtVhPcOlLEtRhYcbyVpuhYgRTHVjXiAAQycadRynoQxoMAqSLQCTIESCqKvwYqVFiLDXWurMQncOeWrmRtYW
+2025-03-06 06:01:49,587 (ERROR) - events.views - Error registering user testuser@gmail.com for event: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 06:01:49,637 (ERROR) - django.request - Internal Server Error: /registrations/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py", line 141, in perform_create
+    serializer.save(user=self.request.user)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\serializers.py", line 50, in create
+    return super().create(validated_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 1008, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 06:02:19,429 (INFO) - django.utils.autoreload - C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\event_reg_sys\settings.py changed, reloading.
+2025-03-06 06:02:23,836 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 06:02:39,450 (INFO) - django.utils.autoreload - C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\event_reg_sys\settings.py changed, reloading.
+2025-03-06 06:07:19,212 (INFO) - events.views - Creating an event
+2025-03-06 06:07:20,884 (INFO) - events.views - Creating an event
+2025-03-06 06:07:20,889 (ERROR) - events.views - Validation error creating event: {'title': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')], 'time': [ErrorDetail(string='Time has wrong format. Use one of these formats instead: hh:mm[:ss[.uuuuuu]].', code='invalid')], 'price': [ErrorDetail(string='A valid number is required.', code='invalid')], 'capacity': [ErrorDetail(string='Ensure this value is greater than or equal to 0.', code='min_value')]}
+2025-03-06 06:07:20,889 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 06:07:22,259 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 06:07:23,836 (INFO) - events.views - Listing events
+2025-03-06 06:07:26,822 (INFO) - events.views - Updating event with ID 4
+2025-03-06 06:07:28,403 (INFO) - events.views - Deleting event with ID 5
+2025-03-06 06:07:32,049 (INFO) - events.views - Registering user testuser@gmail.com for event OrhxFlLVlJWLRJyCSkJvQMYKbRxaNymFzzFamUiPAvMKyIxoxaPwfLsHqwukYLKngwGoGghvmrznqkWXhBxLHaYAcBMHvUdZQOpS
+2025-03-06 06:07:32,051 (ERROR) - events.views - Validation error registering user testuser@gmail.com for event: [ErrorDetail(string='Cannot register for this event. Event is full.', code='invalid')]
+2025-03-06 06:07:32,052 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 06:07:34,827 (INFO) - events.views - Registering user testuser@gmail.com for event YhmICeaHioZsaZeSfQiizPfCHZdBPoMyHKJuDAqZmqbCDhzMdneCaWbERpnRBYDzVxAkDejvjlDBWOoBQwSEeYPwlwpvBxCffYPX
+2025-03-06 06:07:34,834 (ERROR) - events.views - Error registering user testuser@gmail.com for event: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 06:07:34,876 (ERROR) - django.request - Internal Server Error: /registrations/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py", line 141, in perform_create
+    serializer.save(user=self.request.user)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\serializers.py", line 50, in create
+    return super().create(validated_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 1008, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 06:07:57,623 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 06:08:13,588 (INFO) - events.views - Listing events
+2025-03-06 06:11:11,918 (INFO) - django.utils.autoreload - C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py changed, reloading.
+2025-03-06 06:11:14,575 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 06:11:22,474 (INFO) - django.utils.autoreload - C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py changed, reloading.
+2025-03-06 06:11:24,955 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 06:11:36,602 (INFO) - events.views - Creating an event
+2025-03-06 06:11:38,080 (INFO) - events.views - Creating an event
+2025-03-06 06:11:38,084 (ERROR) - events.views - Validation error creating event: {'title': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')], 'time': [ErrorDetail(string='Time has wrong format. Use one of these formats instead: hh:mm[:ss[.uuuuuu]].', code='invalid')], 'price': [ErrorDetail(string='A valid number is required.', code='invalid')], 'capacity': [ErrorDetail(string='Ensure this value is greater than or equal to 0.', code='min_value')]}
+2025-03-06 06:11:38,085 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 06:11:39,489 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 06:11:40,941 (INFO) - events.views - Listing events
+2025-03-06 06:11:44,042 (INFO) - events.views - Updating event with ID 4
+2025-03-06 06:11:45,714 (INFO) - events.views - Deleting event with ID 5
+2025-03-06 06:11:49,643 (INFO) - events.views - Registering user testuser@gmail.com for event RWvDLmycPugtwJqfrdFIMKxezJDcJDTIxOFsCwScdIWXmcUwYdITYlKikWmGdDtWVyXvmhWbOlPHsyDjCulVEsHlfkvQvsDbtxud
+2025-03-06 06:11:49,645 (ERROR) - events.views - Validation error registering user testuser@gmail.com for event: [ErrorDetail(string='Cannot register for this event. Event is full.', code='invalid')]
+2025-03-06 06:11:49,646 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 06:11:53,716 (INFO) - events.views - Registering user testuser@gmail.com for event VZhqisjdZTvIhfTEqCjfeFwUyhncCTKqmCCqpZOJIJXwAaQiMdIhQdqqqGMmPNXvZXeHRwcOMQjEIuiRRDOORNMvehMhdhLpQWmH
+2025-03-06 06:11:53,724 (ERROR) - events.views - Error registering user testuser@gmail.com for event: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 06:11:53,761 (ERROR) - django.request - Internal Server Error: /registrations/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py", line 141, in perform_create
+    serializer.save(user=self.request.user)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\serializers.py", line 50, in create
+    return super().create(validated_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 1008, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `EventRegistration.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `EventRegistration.objects.create()`. You may need to make the field read-only, or override the EventRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 99, in save
+    if self.is_due():
+       ^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py", line 94, in is_due
+    return self.event.date < timezone
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'module'
+
+2025-03-06 06:26:06,073 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 06:31:03,716 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 06:31:10,234 (INFO) - events.views - Listing events
