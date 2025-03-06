@@ -1,0 +1,203 @@
+2025-03-06 05:03:47,113 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:03:48,574 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:04:29,061 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:04:31,062 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:04:43,905 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 05:07:52,367 (INFO) - events.views - Creating an event
+2025-03-06 05:07:54,046 (INFO) - events.views - Creating an event
+2025-03-06 05:07:54,053 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:07:55,639 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:08:27,366 (INFO) - events.views - Creating an event
+2025-03-06 05:09:32,246 (INFO) - events.views - Creating an event
+2025-03-06 05:09:34,012 (INFO) - events.views - Creating an event
+2025-03-06 05:09:34,017 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:09:35,672 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:09:49,985 (INFO) - events.views - Creating an event
+2025-03-06 05:09:51,643 (INFO) - events.views - Creating an event
+2025-03-06 05:09:51,648 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:09:53,151 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:09:54,743 (INFO) - events.views - Listing events
+2025-03-06 05:09:57,371 (INFO) - events.views - Updating event with ID 1
+2025-03-06 05:09:58,737 (INFO) - events.views - Deleting event with ID 1
+2025-03-06 05:10:00,100 (INFO) - events.views - Exporting event registrations to CSV
+2025-03-06 05:10:00,113 (INFO) - events.views - Event registrations exported to CSV successfully
+2025-03-06 05:10:01,554 (INFO) - events.views - Registering user testuser@gmail.com for event sCXUGyTYkaNcRpbtryXHimTPioRIgQOEMTmWHqLFJIBRLgBVzkJnGdVzYsJxIGICwGpliYFWJyimYhkkhIemJvaKqQBpDWibfgDI
+2025-03-06 05:10:01,555 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 05:10:03,197 (INFO) - events.views - Fetching event registrations for user testuser@gmail.com
+2025-03-06 05:10:03,204 (INFO) - events.views - Unregistering user testuser@gmail.com from event obxaXvLZaoSbGycdlqAJUBDxBSNHVckCPUbIpsEnjQMIqSnVyyOtZmGpBOXmivDEouZVPmFYhYghgHewXbCpfeGhvMKKMcDtZoyd
+2025-03-06 05:10:04,463 (INFO) - events.views - Registering user testuser@gmail.com for event esSnpsrgredRZYFDhKOGxexlkgqomcQBxQqkeOeZPyuYjReYeYrZKFjotFvHPqfanssITnISmXrpdYSoAOTkOlZWuAkrBnKccLZl
+2025-03-06 05:10:20,786 (INFO) - events.views - Creating an event
+2025-03-06 05:10:22,328 (INFO) - events.views - Creating an event
+2025-03-06 05:10:22,333 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:10:23,754 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:10:25,048 (INFO) - events.views - Listing events
+2025-03-06 05:10:27,719 (INFO) - events.views - Updating event with ID 1
+2025-03-06 05:10:29,045 (INFO) - events.views - Deleting event with ID 1
+2025-03-06 05:10:30,357 (INFO) - events.views - Exporting event registrations to CSV
+2025-03-06 05:10:30,376 (INFO) - events.views - Event registrations exported to CSV successfully
+2025-03-06 05:10:31,690 (INFO) - events.views - Registering user testuser@gmail.com for event EMmGsNZLgXrLpYwcZOvEJeLILPkLSIssOQYuuKOBRTiREEJzweCdZMmNgCpoGhjteDoAGKQxplLfMWuEeCEDkJFauFAlScsgRUir
+2025-03-06 05:10:31,691 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 05:10:33,006 (INFO) - events.views - Fetching event registrations for user testuser@gmail.com
+2025-03-06 05:10:33,012 (INFO) - events.views - Unregistering user testuser@gmail.com from event lvQapKokmyKfKVwsQZJQgZkTtevqkTCaMTiGPCcdAtZolbmIGGMbVbQMmsjexbFfhqqLCTApvBSDmBwYlvOHfkWnHFUWTlEJoWTO
+2025-03-06 05:10:34,272 (INFO) - events.views - Registering user testuser@gmail.com for event huHoifSbriMjkTenClTNXrhWsSmvjwBQfdedGGRHbGzErPQMNVtqaULRJjBEtrgzXxZzGiwNDvTCoEmrDKxtRihOZcNCJBuGMvkJ
+2025-03-06 05:12:29,913 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 05:12:43,395 (INFO) - django.utils.autoreload - C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py changed, reloading.
+2025-03-06 05:12:45,938 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 05:12:53,569 (INFO) - events.views - Creating an event
+2025-03-06 05:12:55,067 (INFO) - events.views - Creating an event
+2025-03-06 05:12:55,072 (ERROR) - events.views - Validation error creating event: {'title': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')], 'time': [ErrorDetail(string='Time has wrong format. Use one of these formats instead: hh:mm[:ss[.uuuuuu]].', code='invalid')], 'price': [ErrorDetail(string='A valid number is required.', code='invalid')], 'capacity': [ErrorDetail(string='Ensure this value is greater than or equal to 0.', code='min_value')]}
+2025-03-06 05:12:55,072 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:12:56,364 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:12:57,706 (INFO) - events.views - Listing events
+2025-03-06 05:13:00,446 (INFO) - events.views - Updating event with ID 1
+2025-03-06 05:13:01,865 (INFO) - events.views - Deleting event with ID 1
+2025-03-06 05:13:03,156 (INFO) - events.views - Exporting event registrations to CSV
+2025-03-06 05:13:03,167 (INFO) - events.views - Event registrations exported to CSV successfully
+2025-03-06 05:13:04,641 (INFO) - events.views - Registering user testuser@gmail.com for event voHtuMZcDBMsaohNlHfHjPiAYEBaUVWKkaafaTjSIiNWvOyIltugjPCoSxzxfukVgPpGqSqsLcghXgIiPXRlRVyMPbOvyABhVYzY
+2025-03-06 05:13:04,642 (ERROR) - events.views - Validation error registering user testuser@gmail.com for event: [ErrorDetail(string='Cannot register for this event. Event is full.', code='invalid')]
+2025-03-06 05:13:04,642 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 05:13:05,932 (INFO) - events.views - Fetching event registrations for user testuser@gmail.com
+2025-03-06 05:13:05,935 (INFO) - events.views - Unregistering user testuser@gmail.com from event xZKMSRoIcELtIteVknADggjGSWalqrDBImwySGoLtewwabHQokDkNpVcqiJLWhsMYoWSOxBFHZwkXeScRUEmUkUgRDASzTEdkJtK
+2025-03-06 05:13:07,353 (INFO) - events.views - Registering user testuser@gmail.com for event JiAVrPVfFjnomBxnGEvGudgLafvCpWoiccNmtagtqAdlohIAqOzocMDRKhkbIKILVmmqjefUsCLByBLmUjwuTvkOEUyyTlCbBUET
+2025-03-06 05:18:54,717 (INFO) - django.utils.autoreload - C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py changed, reloading.
+2025-03-06 05:18:58,184 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 05:19:13,260 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 05:19:32,726 (INFO) - django.utils.autoreload - C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py changed, reloading.
+2025-03-06 05:19:35,321 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 05:19:44,841 (INFO) - events.views - Creating an event
+2025-03-06 05:19:46,816 (INFO) - events.views - Creating an event
+2025-03-06 05:19:46,821 (ERROR) - events.views - Validation error creating event: {'title': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')], 'time': [ErrorDetail(string='Time has wrong format. Use one of these formats instead: hh:mm[:ss[.uuuuuu]].', code='invalid')], 'price': [ErrorDetail(string='A valid number is required.', code='invalid')], 'capacity': [ErrorDetail(string='Ensure this value is greater than or equal to 0.', code='min_value')]}
+2025-03-06 05:19:46,821 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:19:48,859 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:19:50,895 (INFO) - events.views - Listing events
+2025-03-06 05:19:54,462 (INFO) - events.views - Updating event with ID 1
+2025-03-06 05:19:56,502 (INFO) - events.views - Deleting event with ID 1
+2025-03-06 05:19:59,473 (INFO) - events.views - Exporting event registrations to CSV
+2025-03-06 05:19:59,488 (INFO) - events.views - Event registrations exported to CSV successfully
+2025-03-06 05:20:01,764 (INFO) - events.views - Registering user testuser@gmail.com for event XJHrcBZCQdLcjRGmVKuJjjIciBNKPFONgHBnaZyqwkcrAMKjJIwZvrmJnqEvQaqLHDfgheZQisybrMaSpKinArNWvmaosrjoHhEy
+2025-03-06 05:20:01,766 (ERROR) - events.views - Validation error registering user testuser@gmail.com for event: [ErrorDetail(string='Cannot register for this event. Event is full.', code='invalid')]
+2025-03-06 05:20:01,767 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 05:20:03,933 (INFO) - events.views - Fetching event registrations for user testuser@gmail.com
+2025-03-06 05:20:03,940 (INFO) - events.views - Unregistering user testuser@gmail.com from event kfdsmlDUGtminULGhuetpBOADlnKeozNJnVMrKzvrxkcJgalKSgDzmRCmYAbBPnHJeHLgVjMUChXwctewlgNNhhIYqDZnIhqKJrB
+2025-03-06 05:20:06,126 (INFO) - events.views - Registering user testuser@gmail.com for event YQbyAUMKqBOIzBkHkOaouhTUZHDVafyKsLkTZGHQYJdsIqndGouqEJKtFumUjEzScjHnlJbiGhnTwgOjYKiVWNjzLawlYQiCXnEQ
+2025-03-06 05:20:25,952 (INFO) - django.utils.autoreload - C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py changed, reloading.
+2025-03-06 05:20:32,579 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 05:21:01,193 (INFO) - django.utils.autoreload - C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py changed, reloading.
+2025-03-06 05:21:04,668 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 05:21:18,570 (INFO) - events.views - Creating an event
+2025-03-06 05:21:20,015 (INFO) - events.views - Creating an event
+2025-03-06 05:21:20,019 (ERROR) - events.views - Validation error creating event: {'title': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')], 'time': [ErrorDetail(string='Time has wrong format. Use one of these formats instead: hh:mm[:ss[.uuuuuu]].', code='invalid')], 'price': [ErrorDetail(string='A valid number is required.', code='invalid')], 'capacity': [ErrorDetail(string='Ensure this value is greater than or equal to 0.', code='min_value')]}
+2025-03-06 05:21:20,020 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:21:21,439 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:21:22,952 (INFO) - events.views - Listing events
+2025-03-06 05:21:26,128 (INFO) - events.views - Updating event with ID 1
+2025-03-06 05:21:28,055 (INFO) - events.views - Deleting event with ID 1
+2025-03-06 05:21:29,683 (INFO) - events.views - Exporting event registrations to CSV
+2025-03-06 05:21:29,694 (INFO) - events.views - Event registrations exported to CSV successfully
+2025-03-06 05:21:31,118 (INFO) - events.views - Registering user testuser@gmail.com for event VIwQWVfVhcDHwglBWFTjApikSCORqqZmfVIFLKIdmDiYAlKPYAZrMEqLAMOjCfYesvrvjCgoQBLsGlPsyVAkHhayHaTIoiDMmfDB
+2025-03-06 05:21:31,119 (ERROR) - events.views - Validation error registering user testuser@gmail.com for event: [ErrorDetail(string='Cannot register for this event. Event is full.', code='invalid')]
+2025-03-06 05:21:31,119 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 05:21:32,732 (INFO) - events.views - Fetching event registrations for user testuser@gmail.com
+2025-03-06 05:21:32,736 (INFO) - events.views - Unregistering user testuser@gmail.com from event YLSFnHumDeAARkkjZLpwMXuOAenxNsIqUryWQEUPDwLScDbCSkgLasQKPeprvHGugaMrFWgDNJPVcRyRNOtHjtdFLMYTUQnHvnJJ
+2025-03-06 05:21:34,398 (INFO) - events.views - Registering user testuser@gmail.com for event ZbMtlzutuilIWlnGzlGxcMjIZhgRtQAotGFzHhVXTskLtvQqYSGvCeamCJcvQtEszGKsWYcJVymgASNJXgnBXUrdOzetDILrXhzm
+2025-03-06 05:21:37,279 (INFO) - django.utils.autoreload - C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\views.py changed, reloading.
+2025-03-06 05:21:41,272 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 05:21:48,744 (INFO) - events.views - Creating an event
+2025-03-06 05:21:50,805 (INFO) - events.views - Creating an event
+2025-03-06 05:21:50,814 (ERROR) - events.views - Validation error creating event: {'title': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')], 'time': [ErrorDetail(string='Time has wrong format. Use one of these formats instead: hh:mm[:ss[.uuuuuu]].', code='invalid')], 'price': [ErrorDetail(string='A valid number is required.', code='invalid')], 'capacity': [ErrorDetail(string='Ensure this value is greater than or equal to 0.', code='min_value')]}
+2025-03-06 05:21:50,815 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:21:52,826 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:21:55,211 (INFO) - events.views - Listing events
+2025-03-06 05:21:58,505 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:21:59,830 (INFO) - events.views - Updating event with ID 1
+2025-03-06 05:22:01,987 (INFO) - events.views - Deleting event with ID 1
+2025-03-06 05:22:04,168 (INFO) - events.views - Exporting event registrations to CSV
+2025-03-06 05:22:04,186 (INFO) - events.views - Event registrations exported to CSV successfully
+2025-03-06 05:22:06,235 (INFO) - events.views - Registering user testuser@gmail.com for event vUkXTfZiYhAQQgjypLlRUCzVWBrkddRBJTPVvbInLlxQOasJWuYuhzCOJCHPKEDntgjpLQjIbaPWgZlXrHkKaNVLvJKZFoBgIGrK
+2025-03-06 05:22:06,237 (ERROR) - events.views - Validation error registering user testuser@gmail.com for event: [ErrorDetail(string='Cannot register for this event. Event is full.', code='invalid')]
+2025-03-06 05:22:06,239 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 05:22:07,889 (INFO) - events.views - Listing events
+2025-03-06 05:22:09,284 (ERROR) - django.request - Internal Server Error: /registrations/1/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\mixins.py", line 90, in destroy
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\generics.py", line 87, in get_object
+    queryset = self.filter_queryset(self.get_queryset())
+                                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: EventRegistrationViewSet.get_queryset() missing 1 required positional argument: 'request'
+2025-03-06 05:22:12,652 (INFO) - events.views - Registering user testuser@gmail.com for event DhhystJetcXoVxEdZkFXGfdFWDtamanjTTFRmxyIDlfakgwjgTqYkoVOHIUNdEcUDtpKNXoJANBglCRHCjJVlrxqxedlBKGAWJlq
+2025-03-06 05:22:20,186 (INFO) - events.views - Listing events
+2025-03-06 05:22:21,854 (INFO) - events.views - Creating an event
+2025-03-06 05:22:24,235 (INFO) - events.views - Creating an event
+2025-03-06 05:22:24,246 (ERROR) - events.views - Validation error creating event: {'title': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date': [ErrorDetail(string='Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].', code='invalid')], 'time': [ErrorDetail(string='Time has wrong format. Use one of these formats instead: hh:mm[:ss[.uuuuuu]].', code='invalid')], 'price': [ErrorDetail(string='A valid number is required.', code='invalid')], 'capacity': [ErrorDetail(string='Ensure this value is greater than or equal to 0.', code='min_value')]}
+2025-03-06 05:22:24,248 (WARNING) - django.request - Bad Request: /events/
+2025-03-06 05:22:26,677 (WARNING) - django.request - Unauthorized: /events/
+2025-03-06 05:22:28,891 (INFO) - events.views - Listing events
+2025-03-06 05:22:32,125 (INFO) - events.views - Updating event with ID 1
+2025-03-06 05:22:34,070 (INFO) - events.views - Deleting event with ID 1
+2025-03-06 05:22:35,724 (INFO) - events.views - Exporting event registrations to CSV
+2025-03-06 05:22:35,737 (INFO) - events.views - Event registrations exported to CSV successfully
+2025-03-06 05:22:37,233 (INFO) - events.views - Registering user testuser@gmail.com for event XnrAtvVJTEiuzPIiOMyERlyXKIASZVKfnphZtZipKqAhmJUYxlFIqBsPihHiLpXnZHUBwRimhDGdoTipvOdSOntnYYyaQPGWBQoV
+2025-03-06 05:22:37,234 (ERROR) - events.views - Validation error registering user testuser@gmail.com for event: [ErrorDetail(string='Cannot register for this event. Event is full.', code='invalid')]
+2025-03-06 05:22:37,234 (WARNING) - django.request - Bad Request: /registrations/
+2025-03-06 05:22:38,612 (ERROR) - django.request - Internal Server Error: /registrations/1/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\mixins.py", line 90, in destroy
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\rest_framework\generics.py", line 87, in get_object
+    queryset = self.filter_queryset(self.get_queryset())
+                                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: EventRegistrationViewSet.get_queryset() missing 1 required positional argument: 'request'
+2025-03-06 05:22:40,818 (INFO) - events.views - Registering user testuser@gmail.com for event MheWkWcnEHoplinisCdzpXCFknTUxUdkfwalLXhBHgldLiwkjcUcAuKFkCuiWcGMzuDqPqzhTtczpuGelFxdEvCiUpUbNtApIuvT
