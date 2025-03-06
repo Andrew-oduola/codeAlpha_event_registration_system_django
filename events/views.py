@@ -95,7 +95,3 @@ class EventRegistrationViewSet(viewsets.ModelViewSet):
 
     def perform_destroy(self, instance):
         instance.unregister()
-
-
-
-

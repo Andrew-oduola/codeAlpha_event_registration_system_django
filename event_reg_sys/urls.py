@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path, include
 from django.urls import path, re_path
+
+# Debug Toolbar
+from debug_toolbar.toolbar import debug_toolbar_urls
+
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -41,4 +45,4 @@ urlpatterns = [
     path('', include('events.urls')),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='swagger-docs'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='redoc-docs'),
-]
+] + debug_toolbar_urls()
