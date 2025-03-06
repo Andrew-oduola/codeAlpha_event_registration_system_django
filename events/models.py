@@ -89,8 +89,13 @@ class EventRegistration(models.Model):
             self.delete()
             return True
         return False
+    
+    def is_due(self):
+        return self.event.date < timezone
 
     def save(self, *args, **kwargs):
         if self.is_full():
             raise ValidationError('Cannot register for this event. Event is full.')
+        if self.is_due():
+            raise ValidationError('Cannot register for this event. Event is due.')
         super().save(*args, **kwargs)

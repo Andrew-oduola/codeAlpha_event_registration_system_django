@@ -201,3 +201,7 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: EventRegistrationViewSet.get_queryset() missing 1 required positional argument: 'request'
 2025-03-06 05:22:40,818 (INFO) - events.views - Registering user testuser@gmail.com for event MheWkWcnEHoplinisCdzpXCFknTUxUdkfwalLXhBHgldLiwkjcUcAuKFkCuiWcGMzuDqPqzhTtczpuGelFxdEvCiUpUbNtApIuvT
+2025-03-06 05:26:51,350 (INFO) - django.utils.autoreload - C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py changed, reloading.
+2025-03-06 05:26:59,282 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2025-03-06 05:27:12,512 (INFO) - django.utils.autoreload - C:\Users\Andrew\Documents\Programs\codeAlpha_event_registration_system_django\events\models.py changed, reloading.
+2025-03-06 05:27:19,263 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
