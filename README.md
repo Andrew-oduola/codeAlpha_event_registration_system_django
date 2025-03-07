@@ -45,13 +45,12 @@ This project was developed as part of an internship at **CodeAlpha**.
 - Python 3.8+
 - PostgreSQL
 - Django 5.1.6
-- Node.js (for frontend, if applicable)
 
 ### **Setup**
 
 #### **1. Clone the Repository**
 ```sh
-git clone https://github.com/Andrew-oduola/event_management_registration_api.git
+git clone https://github.com/Andrew-oduola/codeAlpha_event_management_registration_api.git
 cd event_management_registration_api
 ```
 
