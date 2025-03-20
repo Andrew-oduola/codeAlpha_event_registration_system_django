@@ -148,7 +148,7 @@ pip install locust
 
 ### **Run Locust Tests**
 ```sh
-locust
+locust -f locustfiles/browse_events.py
 ```
 Open **http://localhost:8089/** in your browser to start the test.
 
@@ -157,10 +157,10 @@ Open **http://localhost:8089/** in your browser to start the test.
 ## Project Structure
 ```
 📂 event_management_registration_api
+│── 📁 customusers          # User authentication and management
+│── 📁 event_reg_sys        # Main project file
 │── 📁 events               # Event-related models, views, serializers
-│── 📁 users                # User authentication and management
-│── 📁 registrations        # Event registration handling
-│── 📁 templates            # HTML templates (if applicable)
+│── 📁 locustfiles          # Locust test fules
 │── 📄 manage.py            # Django project manager
 │── 📄 requirements.txt     # Dependencies
 │── 📄 .env                 # Environment variables
@@ -169,13 +169,6 @@ Open **http://localhost:8089/** in your browser to start the test.
 
 ---
 
-## **Contributing**
-Contributions are welcome! Feel free to fork the repository and submit pull requests.
-
----
-
-## **License**
-This project is licensed under the **MIT License**.
 
 Happy Coding! 🚀
 
